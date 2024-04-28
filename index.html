@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <title>▲</title>
+
+  <meta name="title" content="kirbo.zip" />
+  <meta name="description" content="kirbo terminal system" />
+  <meta name="theme-color" content="#233972" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kirbo.zip/" />
+  <meta property="og:title" content="kirbo.zip" />
+  <meta property="og:description" content="kirbo terminal system" />
+  
+  <link rel="stylesheet" href="css/style.css?4">
+</head>
+
+<body>
+  <div class="container">
+    <div class="menu">
+      <div class="buttons-flex">
+      <div class="button red"></div>
+      <div class="button yellow"></div>
+      <div class="button green"></div>
+    </div>
+    <div class="title">
+      <h1 id="title_tx">you are now entering kirbo terminal</h1>
+    </div>
+
+    <script text="text/javascript">
+        window.addEventListener('DOMContentLoaded', function() {
+            var titles = ['you are now entering kirbo terminal', 'welcome to kirbo terminal', 'hello world', 'are you a visitor?', 'welcoming you to kirbo terminal'];
+            var intervalDuration = 3000; 
+    
+            function changeTitle() {
+              document.getElementById('title_tx').textContent = titles[Math.floor(Math.random() * titles.length)];
+            }
+    
+            changeTitle(); 
+    
+            setInterval(changeTitle, intervalDuration);
+        });
+    </script>
+
+    </div>
+    
+    <div id="app">
+    <div id="terminal">
+      <a id="before"></a>
+    </div>
+</div>
+    <div id="command" onclick="$('texter').focus();">
+      <textarea
+        type="text"
+        id="texter"
+        onkeyup="typeIt(this, event)"
+        onkeydown="typeIt(this, event); 
+                   moveIt(this.value.length, event)"
+        onkeypress="typeIt(this, event);"
+        autofocus
+      ></textarea>
+      <div id="liner">
+        <span id="typer"></span><b class="cursor" id="cursor">█</b>
+      </div>
+    </div>
+    </div>
+  <script src="js/caret.js?4"></script>
+  <script src="js/commands.js?4"></script>
+  <script src="js/main.js?4"></script>
+
+</body>
+</html>
